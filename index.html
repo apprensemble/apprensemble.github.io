@@ -1,6 +1,7 @@
 <script src="raphael-min.js"></script> 
 <script src="underscore-min.js"></script> 
 <script src="sequence-diagram-min.js"></script>
+<script src="jquery.min.js"></script>
 <div id="diagram"></div> 
 <textarea id="language" rows="10" cols="50">
 #Note left of A: Note to the\n left of A
@@ -10,10 +11,14 @@ Note over A,B: Note over A,B
 </textarea>
 <button id="parse" type="button">Click Me!</button>
 <script>
-var diagram = Diagram.parse($('#language').val());
-console.log(diagram);
+$(document).ready(function(){
+    $('#parse').click(_.throttle( function() {
+	var diagram = Diagram.parse($('#language').val());
+	console.log(diagram);
 
-diagram.drawSVG('diagram', {theme: 'hand'});
+	diagram.drawSVG('diagram', {theme: 'hand'});
+	}, 100));
+    });
 </script>
 
 
