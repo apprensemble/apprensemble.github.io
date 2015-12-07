@@ -17,7 +17,7 @@ $(document).ready(function(){
 	var diagram = Diagram.parse($('#language').val());
 	console.log(diagram);
 
-	diagram.drawSVG('diagram', {theme: 'hand'});
+	diagram.drawSVG('diagram', {theme: 'simple'});
 	}, 100));
     $('#clear').click(_.throttle( function() {
 	$('#diagram').empty();
