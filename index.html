@@ -2,7 +2,6 @@
 <script src="underscore-min.js"></script> 
 <script src="sequence-diagram-min.js"></script>
 <script src="jquery.min.js"></script>
-<div id="diagram">Afficher le resultat ici</div> 
 <textarea id="language" rows="10" cols="50">
 #Note left of A: Note to the\n left of A
 #Note right of A: Note to the\n right of A
@@ -11,6 +10,7 @@ Note over A,B: Note over A,B
 </textarea>
 <button id="parse" type="button">dessiner</button>
 <button id="clear" type="button">nettoyer</button>
+<div id="diagram">Afficher le resultat ici</div> 
 <script>
 $(document).ready(function(){
     $('#parse').click(_.throttle( function() {
