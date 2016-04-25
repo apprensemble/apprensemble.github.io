@@ -3,10 +3,23 @@
 <script src="sequence-diagram-min.js"></script>
 <script src="jquery.min.js"></script>
 <textarea id="language" rows="10" cols="50">
-#Note left of A: Note to the\n left of A
-#Note right of A: Note to the\n right of A
-#Note over A: Note over A
-Note over A,B: Note over A,B
+Utilisateur->Client: -s adresseIP -n UserName
+Client->Serveur:UserName
+Note right of Serveur: attribution d'une cnx depuis son pool de fork.
+Serveur->Client:Menu UserName
+Serveur->Client:Liste Referentiels
+Client->Utilisateur:mode?
+Utilisateur->Client:mode (dl ou visu)
+Client->Utilisateur:id à visualiser?
+Utilisateur->Client:id referentiel
+Client->Serveur:dl ou visu
+Client->Serveur:id_referentiel
+Serveur->Client:contenu referentiel
+Client->Utilisateur:ecrit vers ecran ou fichier
+Utilisateur->Client:quitte
+Client->Serveur:quitte
+Note right of Serveur:Libere la connexion
+Client->Utilisateur:Aurevoir
 </textarea>
 <button id="parse" type="button">dessiner</button>
 <button id="clear" type="button">nettoyer</button>
