@@ -3,19 +3,15 @@
 <script src="sequence-diagram-min.js"></script>
 <script src="jquery.min.js"></script>
 <textarea id="language" rows="10" cols="50">
-Utilisateur->Client: -s adresseIP -n UserName
-Client->Serveur:UserName
-Note right of Serveur: attribution d'une cnx depuis son pool de fork.
-Serveur->Client:Menu UserName
-Serveur->Client:Liste Referentiels
-Client->Utilisateur:mode?
-Utilisateur->Client:mode (dl ou visu)
-Client->Utilisateur:id à visualiser?
-Utilisateur->Client:id referentiel
-Client->Serveur:dl ou visu
-Client->Serveur:id_referentiel
-Serveur->Client:contenu referentiel
-Client->Utilisateur:ecrit vers ecran ou fichier
+Utilisateur->Client: -s adresseIP
+Client->Serveur:connexion vers ip	
+Note right of Serveur: attr. cnx dans pool de fork.
+Serveur->Client:Liste des referentiels	
+Client->Utilisateur:Liste des referentiels
+Utilisateur->Client:id referentiel	
+Client->Serveur:id referentiel	
+Serveur->Client:contenu referentiel	
+Client->Utilisateur:ecrit vers ecran et fichier ref.
 Utilisateur->Client:quitte
 Client->Serveur:quitte
 Note right of Serveur:Libere la connexion
